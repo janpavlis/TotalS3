@@ -1,0 +1,3 @@
+[submodule "Submodules/TotalWfx.NET"]
+	path = Submodules/TotalWfx.NET
+	url = https://github.com/janpavlis/TotalWfx.NET.git

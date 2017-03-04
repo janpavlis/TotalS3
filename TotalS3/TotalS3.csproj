@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aaa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Submodules\TotalWfx.NET\TotalWfx.NET\TotalWfx.NET.csproj">
+      <Project>{443b4314-cf97-4564-beec-430bcc5e5f73}</Project>
+      <Name>TotalWfx.NET</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)Submodules\TotalWfx.NET\TotalWfx.NET\bin\$(ConfigurationName)\TotalWfx.wfx"  "$(TargetDir)"
+copy "$(SolutionDir)Submodules\TotalWfx.NET\TotalWfx.NET\bin\$(ConfigurationName)\TotalWfx.wfx64"  "$(TargetDir)"
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
